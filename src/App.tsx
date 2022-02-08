@@ -48,7 +48,7 @@ const handleClick = (id:number) => {
         {userData.posts.map((post:Post) => {
           return (
             <div key={post.id} onClick={() => handleClick(post?.id)}>
-              <ListItem  name={post?.author} email={post?.download_url} />
+              <ListItem  author={post?.author} />
             </div>
           )
         })}
