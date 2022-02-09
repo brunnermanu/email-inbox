@@ -1,8 +1,9 @@
 import React from 'react';
 
-const ListItem = ({author}:{author: string}): JSX.Element => {
+const ListItem = ({author,download_url}:{author: string, download_url: string}): JSX.Element => {
   return (
-    <div className="border border-gray-300 px-3 py-2 hover:cursor-pointer hover:bg-gray-300">
+    <div className="flex flex-row items-center gap-x-3 border border-slate-100 px-4 py-3 hover:cursor-pointer hover:bg-slate-50">
+      <img src={download_url} alt="img" className="object-cover w-10 h-10 rounded-full"/>
       <h2>{author}</h2>
     </div>
   )
