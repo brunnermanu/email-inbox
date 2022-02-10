@@ -9,9 +9,9 @@ const InfoBox = ({ post, onClick }:{ post:Post, onClick:()=> void }): JSX.Elemen
       </div>
       <h1 className="pb-10 pt-10 sm:pt-0">{post.author}</h1>
       <img className="max-h-80 md:w-auto rounded-lg" src={post.download_url} alt={post.author}/>
-      <p className="mt-8 text-gray-400">{"Download-Url:"}</p>
-      <a className="mb-2" href={post.download_url} target={"_blank"}>{post.download_url}</a>
-      <p className="text-gray-400">{"Url:"}</p>
+      <p className="mt-8 text-gray-400">Download-Url:</p>
+      <a className="mb-4" href={post.download_url} target={"_blank"}>{post.download_url}</a>
+      <p className="text-gray-400">Url:</p>
       <a className="mb-10" href={post.url} target={"_blank"}>{post.url}</a>
     </div>
   )

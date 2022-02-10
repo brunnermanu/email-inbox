@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ListItem from "./ListItem";
 import InfoBox from "./InfoBox";
 import './index.css';
@@ -48,7 +48,6 @@ function App() {
         setVisible(true)
       }
     })
-
   }
 
   return (
@@ -62,9 +61,9 @@ function App() {
               </div>
               )
             }) :
-          <div className="w-screen h-screen flex items-center justify-center">
-            <h1 className="text-center">Loading ...</h1>
-          </div>
+            <div className="w-screen h-screen flex items-center justify-center">
+              <h1 className="text-center">Loading ...</h1>
+            </div>
         }
       </div>
       {currentPost &&

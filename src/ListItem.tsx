@@ -1,7 +1,6 @@
 import React from 'react';
 import { Post } from "./App";
 
-
 const ListItem = ({ post }:{ post:Post }): JSX.Element => {
   return (
     <div className="flex flex-row items-center gap-x-3 border border-slate-100 px-6 py-3 hover:cursor-pointer hover:bg-slate-50">
@@ -11,4 +10,4 @@ const ListItem = ({ post }:{ post:Post }): JSX.Element => {
   )
 }
 
-export default ListItem;
+export default ListItem
