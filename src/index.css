@@ -3,13 +3,17 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Epilogue', sans-serif;
+  font-family: 'Epilogue', sans-serif;
 }
 
 h1 {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 
 h2 {
-    @apply text-lg;
+  @apply text-lg;
+}
+
+a:hover {
+  @apply text-blue-500;
 }
