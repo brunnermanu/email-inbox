@@ -53,8 +53,7 @@ function App() {
         </div> :
         <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
           <div className="col-span-1 overflow-y-scroll h-screen">
-            { postData.dataIsLoaded &&
-              postData.posts.map((post: Post) => {
+            { postData.posts.map((post: Post) => {
                 return (
                   <div className="hover:cursor-pointer hover:bg-slate-50" key={post.id} onClick={() => handleClick(post)}>
                     <ListItem post={post}/>
