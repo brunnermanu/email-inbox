@@ -56,7 +56,7 @@ function App() {
             { postData.dataIsLoaded &&
               postData.posts.map((post: Post) => {
                 return (
-                  <div key={post.id} onClick={() => handleClick(post)}>
+                  <div key={post.id} onClick={() => handleClick(post)} className="hover:cursor-pointer hover:bg-slate-50">
                     <ListItem post={post}/>
                   </div>
                 )
