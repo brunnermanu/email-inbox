@@ -8,11 +8,9 @@ export interface Post {
   author: string,
   url: string,
   download_url: string,
-  onClick?: () => void
 }
 
 function App() {
-
   const [postData, setPostData] = useState({
     posts: [],
     dataIsLoaded: false
@@ -49,32 +47,32 @@ function App() {
 
   return (
     <>
-      { !postData.dataIsLoaded &&
+      { !postData.dataIsLoaded ?
         <div className="w-screen h-screen flex items-center justify-center">
           <h1 className="text-center">Loading ...</h1>
-        </div>
-      }
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
-        <div className="col-span-1 overflow-y-scroll h-screen">
-          { postData.dataIsLoaded &&
-            postData.posts.map((post: Post) => {
-              return (
-                <div key={post.id} onClick={() => handleClick(post)}>
-                  <ListItem post={post}/>
-                </div>
+        </div> :
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4">
+          <div className="col-span-1 overflow-y-scroll h-screen">
+            { postData.dataIsLoaded &&
+              postData.posts.map((post: Post) => {
+                return (
+                  <div key={post.id} onClick={() => handleClick(post)}>
+                    <ListItem post={post}/>
+                  </div>
                 )
               })
+            }
+          </div>
+          {currentPost &&
+            <div key={currentPost.id}
+                 className={visible ?
+                   "absolute top-0 left-0 z-10 h-full w-full visible flex flex-col bg-white col-span-1 sm:col-span-2 md:col-span-3 sm:static sm:bg-white sm:h-auto sm:w-full sm:items-center"
+                   : "invisible"}>
+              <InfoBox post={currentPost} onClick={() => setVisible(false)}/>
+            </div>
           }
         </div>
-        {currentPost &&
-        <div key={currentPost.id}
-             className={visible ?
-               "absolute top-0 left-0 z-10 h-full w-full visible flex flex-col bg-white col-span-1 sm:col-span-2 md:col-span-3 sm:static sm:bg-white sm:h-auto sm:w-full sm:items-center"
-               : "invisible"}>
-          <InfoBox post={currentPost} onClick={() => setVisible(false)}/>
-        </div>
-        }
-      </div>
+      }
     </>
   )
 }
